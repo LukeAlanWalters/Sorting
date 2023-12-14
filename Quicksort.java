@@ -56,7 +56,6 @@ public class Quicksort implements Sorter {
     }//if
     else {
       int mid = partition(values,lb,ub,order);
-      System.out.println(Arrays.toString(values));
       quickSort(values, lb, mid, order);
       quickSort(values, mid+1, ub, order);
     }//else
@@ -73,7 +72,7 @@ public class Quicksort implements Sorter {
      * @return returns where the pivotValue ended at the end of the partition
      */
     private static <T> int partition(T[] arr, int lb, int ub, Comparator<? super T> order){
-     int pivotIndex = (ub + lb)/2;
+     int pivotIndex = lb + (ub - lb)/2;
      swap(arr, lb, pivotIndex);
 
 
